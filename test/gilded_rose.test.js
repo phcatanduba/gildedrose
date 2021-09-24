@@ -79,4 +79,11 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).toBe(3);
         expect(items[0].quality).toBe(48);
     });
+
+    test('conjured: quality decrease two times more when sellIn is negative', () => {
+        const gildedRose = new Shop([new Item('Conjured', 0, 50)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(-1);
+        expect(items[0].quality).toBe(46);
+    });
 });
