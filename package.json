@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/emilybache/GildedRose-Refactoring-Kata",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "jest": "^24.9.0"
   }
 }
