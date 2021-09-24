@@ -39,10 +39,28 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).toBe(1);
     });
 
-    test('quality should not be greater than 50', () => {
+    test('quality should`nt be greater than 50', () => {
         const gildedRose = new Shop([new Item('Aged Brie', 1, 50)]);
         const items = gildedRose.updateQuality();
         expect(items[0].sellIn).toBe(0);
+        expect(items[0].quality).toBe(50);
+    });
+
+    test('backstage: quality increase two units because 5 < sellIn <= 10', () => {
+        const gildedRose = new Shop([
+            new Item('Backstage passes to a TAFKAL80ETC concert', 7, 48),
+        ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(6);
+        expect(items[0].quality).toBe(50);
+    });
+
+    test('backstage: quality increase three units because 0 < sellIn <= 5', () => {
+        const gildedRose = new Shop([
+            new Item('Backstage passes to a TAFKAL80ETC concert', 5, 47),
+        ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(4);
         expect(items[0].quality).toBe(50);
     });
 });
