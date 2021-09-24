@@ -31,4 +31,11 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).toBe(-1);
         expect(items[0].quality).toBe(0);
     });
+
+    test('legendary item do nothing on update', () => {
+        const gildedRose = new Shop([new Item('Aged Brie', 2, 0)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(1);
+        expect(items[0].quality).toBe(1);
+    });
 });
