@@ -1,6 +1,7 @@
 {
   "name": "gilded-rose-kata",
   "version": "1.0.0",
+  "type": "module",
   "description": "Gilded Rose kata in JavaScript with Jest",
   "scripts": {
     "test": "jest",
