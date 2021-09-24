@@ -32,10 +32,17 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).toBe(0);
     });
 
-    test('legendary item do nothing on update', () => {
+    test('quality update as a aged brie (increase)', () => {
         const gildedRose = new Shop([new Item('Aged Brie', 2, 0)]);
         const items = gildedRose.updateQuality();
         expect(items[0].sellIn).toBe(1);
         expect(items[0].quality).toBe(1);
+    });
+
+    test('quality should not be greater than 50', () => {
+        const gildedRose = new Shop([new Item('Aged Brie', 1, 50)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(0);
+        expect(items[0].quality).toBe(50);
     });
 });
