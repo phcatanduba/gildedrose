@@ -17,4 +17,11 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).toBe(0);
         expect(items[0].quality).toBe(80);
     });
+
+    test('quality update decrease more than usual (2x) after sell in date', () => {
+        const gildedRose = new Shop([new Item('foo', 0, 3)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(-1);
+        expect(items[0].quality).toBe(1);
+    });
 });
