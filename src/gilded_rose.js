@@ -1,8 +1,8 @@
-import LegendaryItem from './items/legendary-item.js';
-import AgedBrie from './items/aged-brie.js';
-import BackstagePass from './items/backstage-pass.js';
-import ConjuredItem from './items/conjured-item.js';
-import RandomItem from './items/random-item.js';
+import LegendaryItem from './items/legendary_item.js';
+import AgedBrie from './items/aged_brie_item.js';
+import BackstagePass from './items/backstage_pass_item.js';
+import ConjuredItem from './items/conjured_item.js';
+import RandomItem from './items/random_item.js';
 
 export default class Shop {
     constructor(items = []) {
